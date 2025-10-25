@@ -1,0 +1,627 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elie's Stationery Supplies | Quality Stationery in Kigali</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2be268 0%, #1a8c42 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .address {
+            margin-top: 15px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .hero {
+            background-color: #6f42c1;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: #e0a800;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .features {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2be268;
+            font-size: 2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-card h3 {
+            color: #6f42c1;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+        }
+        
+        .about {
+            padding: 60px 0;
+            background-color: #f1f8ff;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .placeholder-image {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            background: linear-gradient(135deg, #2be268 0%, #6f42c1 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefits {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .benefits-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2be268;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .highlight {
+            background-color: #ffc107;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .testimonial {
+            padding: 60px 0;
+            background-color: #6f42c1;
+            color: white;
+            text-align: center;
+        }
+        
+        .testimonial p {
+            font-size: 1.3rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .contact {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #2be268;
+        }
+        
+        .footer-section p, 
+        .footer-section a {
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* New styles for owner and stationery photos */
+        .owner-section {
+            padding: 60px 0;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .owner-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .owner-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2be268 0%, #6f42c1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .owner-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .owner-info {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        
+        .owner-info h3 {
+            color: #2be268;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .products-section {
+            padding: 60px 0;
+            background-color: #554c5a;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-image {
+            height: 200px;
+            width: 100%;
+            background: linear-gradient(135deg, #2be268 0%, #6f42c1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            overflow: hidden;
+        }
+        
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product-info h4 {
+            color: #6f42c1;
+            margin-bottom: 10px;
+        }
+        
+        .phone-number {
+            font-size: 1.2rem;
+            font-weight: 100;
+            color: #2be268;
+            margin: 10px 0;
+        }
+        
+        .email-link {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .email-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .owner-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .owner-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Elie's Stationery</div>
+            <p class="tagline">Your trusted partner in quality stationery</p>
+            <p class="address">KIGALI P.O.Box 2346, RWANDA</p>
+            <p class="phone-number">Call us: +265 767 458 218</p>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Discover the Best Stationery Products with Care and Reliability</h1>
+            <p>We deliver quality stationery right to your doorstep in Kigali and beyond</p>
+            <a href="#contact" class="btn">Order Now</a>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Elie's Stationery?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🔹 Customer-Care Focused</h3>
+                    <p>Your satisfaction is our priority. We provide personalized service and support for all your stationery needs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚚 Fast Delivery</h3>
+                    <p>No need to worry—we bring your stationery directly to you, wherever you are in Kigali.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⏰ Save Time</h3>
+                    <p>Place your order and let us deliver. Focus on what matters while we handle your stationery needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="owner-section">
+        <div class="container">
+            <h2 class="section-title">Meet the Owner</h2>
+            <div class="owner-container">
+                <div class="owner-photo">
+                    <!-- REPLACE THIS WITH YOUR PHOTO -->
+                    <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                        Elie
+                    </div>
+                </div>
+                <div class="owner-info">
+                    <h3>Elie</h3>
+                    <p>Thank you for visiting Elie's Stationery Supplies! I personally ensure that every product we deliver meets the highest standards of quality. Your satisfaction is my top priority, and I'm always available to assist with your stationery needs.</p>
+                    <p class="phone-number">Direct Contact: +265 767 458 218</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Elie's Stationery Supplies</h2>
+                    <p>At Elie's Stationery Supplies, we take pride in offering the very best stationery to meet all your school, office, and personal needs. We understand that quality stationery is not just about writing or keeping records—it is about staying organized, productive, and confident in your daily activities.</p>
+                    <p>That is why every product we provide, from pens, notebooks, and envelopes to files, printing papers, and office supplies, is carefully chosen to guarantee quality, durability, and affordability.</p>
+                    <p>Our products are designed to make your work easier and more enjoyable. The smooth ink in our pens makes writing effortless, our strong notebooks and files keep your notes safe, and our printing papers deliver clear, professional results every time.</p>
+                </div>
+                <div class="about-image">
+                    <div class="placeholder-image">
+                        Stationery Collection
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Our Stationery Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        Pens & Writing Tools
+                    </div>
+                    <div class="product-info">
+                        <h4>Writing Instruments</h4>
+                        <p>Quality pens, pencils, markers and more</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        Notebooks & Journals
+                    </div>
+                    <div class="product-info">
+                        <h4>Notebooks</h4>
+                        <p>Various sizes and styles for all needs</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        Office Supplies
+                    </div>
+                    <div class="product-info">
+                        <h4>Office Essentials</h4>
+                        <p>Staples, clips, folders and more</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        Art Materials
+                    </div>
+                    <div class="product-info">
+                        <h4>Art Supplies</h4>
+                        <p>Creative materials for artists</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">What Sets Us Apart</h2>
+            <ul class="benefits-list">
+                <li>We combine good prices, reliable delivery, and outstanding customer service</li>
+                <li>You get more than just stationery—you get convenience and peace of mind</li>
+                <li>With Elie's Stationery, you're investing in tools that help you achieve success</li>
+                <li>Customers who buy from us often return because they know they can always rely on us for consistency and excellence</li>
+                <li>We are committed to building lasting relationships with our customers</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="testimonial">
+        <div class="container">
+            <p>"Elie's Stationery has been our go-to supplier for office materials for over two years. Their reliable delivery and quality products have helped our business stay organized and professional."</p>
+            <p><strong>- Satisfied Customer</strong></p>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Ready to place your order or have questions? Contact us today!</p>
+            
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" placeholder="How can we help you?"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <h3>Contact Information</h3>
+                <p>Email: <a href="mailto:mubwirizabutumwaelie9@gmail.com" class="highlight email-link">mubwirizabutumwaelie9@gmail.com</a></p>
+                <p class="phone-number">Phone: +265 767 458 218</p>
+                <p>Address: Kigali, P.O.Box 2346, Rwanda</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Elie's Stationery</h3>
+                    <p>Your trusted partner in quality stationery in Kigali, Rwanda.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Kigali, P.O.Box 2346, Rwanda</p>
+                    <a href="mailto:mubwirizabutumwaelie9@gmail.com">mubwirizabutumwaelie9@gmail.com</a>
+                    <p class="phone-number">+265 767 458 218</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Elie's Stationery Supplies. All rights reserved.</p>
+                <p>Thank you for choosing Elie's Stationery Supplies.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
